@@ -6,7 +6,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 
 
 class ArticleListView(ListView):
-    model = Article
+    queryset = Article.objects.order_by("-id")
     template_name = 'article_list.html'
 
 

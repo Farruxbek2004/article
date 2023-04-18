@@ -7,26 +7,31 @@
 {% block content %}
     {% for article in object_list %}
         <div class="card mb-3">
-            <div class="card-header">
-                {% if article.photo %}
+            <div class="card-body">
+                <h1>
                     <a href="{% url 'article_detail' article.pk %}">
-                        <img src="{{ article.photo.url }}" alt="{{ article.title }}">
+                        {{ article.title }}
                     </a>
-                {% endif %}
-{#                <a href="{% url 'article_detail' article.pk %}">#}
-{#                    <span class="font-weight-bold">{{ article.title }}</span>#}
-{#                </a>#}
-                <p class="text-muted">{{ article.author }} tomonidan yozildi {{ article.data }}</p>
+                </h1>
+            </div>
+            <div class="card-header">
+                <img src="{{ article.photo.url }}" alt="" width="1000" height="350">
+                <h5 class="text-muted">{{ article.author }} written by {{ article.data }}</h5>
             </div>
             <div class="card-body">
-                {{ article.body }}
+                {% if article.body|length > 80 %}
+                    <p class="card-text">{{ article.body|slice:200 }}</p>
+                {% else %}
+                    <p class="card-text">{{ article.body }}</p>
+                {% endif %}
             </div>
             <div class="card-footer text-center text-muted">
                 <a href="{% url 'article_edit' article.pk %}"
-                   class="btn btn-success">Tahrirlash</a>
-                <a href="{% url 'article_delete' article.pk %}" class="btn btn-danger">O'chirish</a>
+                   class="btn btn-success">Editing</a>
+                <a href="{% url 'article_delete' article.pk %}" class="btn btn-danger">Delete</a>
             </div>
         </div>
         <br>
     {% endfor %}
 {% endblock content %}
+

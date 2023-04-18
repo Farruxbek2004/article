@@ -6,6 +6,7 @@ from django.db import models
 
 class Article(models.Model):
     title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)
     body = models.TextField()
     photo = models.ImageField(upload_to='images/', blank=True)
     data = models.DateTimeField(auto_now_add=True)
@@ -18,4 +19,4 @@ class Article(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('article_detail',args=[str(self.id)])
+        return reverse('article_detail', args=[str(self.id)])

@@ -11,8 +11,8 @@
     </div>
     <p>
         <a href="{% url 'article_edit' article.pk %}"
-           class="btn btn-primary">Tahrirlash</a>
-        <a href="{% url 'article_delete' article.pk %}" class="btn btn-danger">O'chirish</a>
-    <p><a href="{% url 'article_list' %}"> Barcha maqola</a>larni ko'rish</p>
+           class="btn btn-primary">Editing</a>
+        <a href="{% url 'article_delete' article.pk %}" class="btn btn-danger">Delete</a>
+    <p><a href="{% url 'article_list' %}"> All articles</a>to see</p>
     </p>
 {% endblock content %}

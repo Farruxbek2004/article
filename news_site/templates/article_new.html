@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="text-success">Yangi maqola qo'shish</h1>
+<h1 class="text-success">Add a new article</h1>
     <form  method="post" enctype="multipart/form-data">{% csrf_token %}
         {{ form.as_p }}
-    <button class="btn btn-primary ml-2" type="submit">Saqlash</button>
+    <button class="btn btn-primary ml-2" type="submit">Save</button>
     </form>
 {% endblock content %}
