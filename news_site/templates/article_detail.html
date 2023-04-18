@@ -3,7 +3,7 @@
 {% block content %}
     <div class="article-entry">
         <h2>{{ object.title }}</h2>
-        <video class="video-fluid">
+        <video width="1100" height="400" controls>
             <source src="{{ object.video.url }}">
         </video>
         <p>{{ object.author }} | {{ object.data }}</p>
