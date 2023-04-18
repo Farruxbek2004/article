@@ -18,7 +18,7 @@ class ArticleDetailView(LoginRequiredMixin, DetailView):
 
 class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Article
-    fields = ('title', 'photo', 'body')
+    fields = ('title', 'photo', 'video', 'body')
     template_name = 'article_edit.html'
     login_url = 'login'
 
@@ -41,7 +41,7 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'article_new.html'
-    fields = ('title', 'body', 'photo', 'author')
+    fields = ('title', 'body', 'photo', 'video', 'author')
     login_url = 'login'
 
     def form_valid(self, form):
