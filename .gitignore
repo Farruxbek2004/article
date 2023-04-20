@@ -102,7 +102,6 @@ celerybeat.pid
 
 # Environments
 news_site/news_site/.env
-car/.env
 .venv
 env/
 venv/
