@@ -101,7 +101,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+news_site/.env
 car/.env
 .venv
 env/
