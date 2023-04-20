@@ -9,13 +9,13 @@
         <div class="card mb-3">
             <div class="card-body">
                 <h1>
-                    <a href="{% url 'article_detail' article.pk %}" target="_blank">
+                    <a href="{% url 'article_detail' article.pk %}">
                         {{ article.title }}
                     </a>
                 </h1>
             </div>
             <div class="card-header">
-                <img src="{{ article.photo.url }}" alt="" width="1000" height="350">
+                <img src="{{ article.photo.url }}" alt="" width="1000" height="400">
                 <h5 class="text-muted">{{ article.author }} written by {{ article.data }}</h5>
             </div>
             <div class="card-body">

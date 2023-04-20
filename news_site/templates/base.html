@@ -28,9 +28,22 @@
 </head>
 <body>
 
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <a class="navbar-brand" href="{% url 'home' %}">Newspaper</a>
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarCollapse" aria-controls="navbarCollapse"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <form class="d-flex" role="search" action="" method="post">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" name="search"
+               placeholder="Search"
+               aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarCollapse" aria-controls="navbarCollapse"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -59,13 +72,6 @@
                 </li>
             </ul>
         {% else %}
-            {#            <form class="d-flex" role="search" action="" method="post">#}
-            {#                {% csrf_token %}#}
-            {#                <input class="form-control me-2" type="search" name="search"#}
-            {#                       placeholder="Search with {{ books_count }} books"#}
-            {#                       aria-label="Search">#}
-            {#                <button class="btn btn-outline-success" type="submit">Search</button>#}
-            {#            </form>#}
             <form class="form-inline ml-auto">
                 <a href="{% url 'login' %}" class="btn btn-outline-secondary">
                     Log In</a>

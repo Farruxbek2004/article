@@ -22,3 +22,17 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse('article_detail', args=[str(self.id)])
+
+
+# @admin.register(BookImage)
+# class BookImageAdmin(admin.ModelAdmin):
+#     list_display = ["book", "image"]
+# class BookImageInline(admin.TabularInline):
+#     model = BookImage
+#     extra = 1
+class ArticleVideo(models.Model):
+    article = models.ForeignKey("Article", on_delete=models.CASCADE, related_name='videos')
+    video = models.FileField(upload_to='articles')
+
+    def __str__(self):
+        return str(self.article)

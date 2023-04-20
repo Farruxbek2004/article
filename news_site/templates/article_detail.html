@@ -15,4 +15,14 @@
         <a href="{% url 'article_delete' article.pk %}" class="btn btn-danger">Delete</a>
     <p><a href="{% url 'article_list' %}"> All articles</a>to see</p>
     </p>
+
+    <div class="row">
+        <h2>Video</h2>
+        {% for article_video in object.videos.all %}
+            <video width="1100" height="400" controls>
+                <source src="{{ article_video.video.url }}">
+            </video>
+        {% endfor %}
+    </div>
 {% endblock content %}
+
