@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'news_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+         'NAME': 'article.sqlite3'
         # 'NAME': env('DB_NAME'),
         # 'USER': env('DB_USER'),
         # 'PASSWORD': env('DB_PASSWORD'),
@@ -128,13 +128,6 @@ STATIC_URL = 'static/'
 AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = "smtp.mailgun.org"
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "postmaster@sandboxe031125785e24350902e9eb4d6cc45f6.mailgun.org"
-EMAIL_HOST_PASSWORD = "c6cb8fd63f29b8ca2bd970b08372b8eb-6ae2ecad-ffba970a"
-EMAIL_USE_TLS = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
